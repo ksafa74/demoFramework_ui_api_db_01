@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         features = "src/test/resources/features" ,
-        glue = "com/library/steps",
+        glue = "com/test_project/steps",
         dryRun = false,
         tags = "",
         publish = false,
