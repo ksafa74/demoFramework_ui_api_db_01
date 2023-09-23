@@ -1,4 +1,4 @@
-package com.test_project.pages;
+package com.test_project.steps;
 
 
 

@@ -18,8 +18,7 @@ import org.junit.runner.RunWith;
         glue = "com/test_project/steps",
         dryRun = false,
         tags = "",
-        publish = false,
-        monochrome=true
+        publish = false
 )
 public class CukesRunner {
 

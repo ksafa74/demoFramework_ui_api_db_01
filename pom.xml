@@ -119,7 +119,7 @@
                     <runOrder>Alphabetical</runOrder>
                     <includes>
                         <include>**/*CukesRunner.java</include>
-                        <include>**/*FaileTestRunner.java</include>
+
                     </includes>
                 </configuration>
             </plugin>
