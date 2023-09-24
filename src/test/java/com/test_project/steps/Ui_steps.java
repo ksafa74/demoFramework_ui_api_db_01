@@ -25,7 +25,7 @@ public class Ui_steps {
 
     @Then("i should see logout button")
     public void iShouldSeeLogoutButton() {
-        Assert.assertFalse(new ContactListUserPage().logoutButton.isDisplayed());
+        Assert.assertTrue(new ContactListUserPage().logoutButton.isDisplayed());
         System.out.println("AddUserPage.newUserUI = " + AddUserPage.newUserUI);
     }
 
