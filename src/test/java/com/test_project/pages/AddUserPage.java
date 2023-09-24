@@ -5,15 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class AddUserPage extends BasePage {
 
-    public static String firstName;
-    public static String lastName;
-    public static String emailAddress;
-    public static String password;
 
+    public static Map<String,String> newUserUI;
 
     @FindBy (id = "firstName")
     public WebElement firstNameField;
@@ -34,23 +32,20 @@ public class AddUserPage extends BasePage {
     public WebElement cancelButton;
 
     public static void createUser(){
+        newUserUI = new LinkedHashMap<>();
 
-        Map<String,String> newUser = new HashMap<>();
-        newUser.put("name",new Faker().name().firstName());
-        newUser.put("lastName",new Faker().name().lastName());
-        newUser.put("emailAddress",new Faker().internet().emailAddress());
-        newUser.put("password",new Faker().internet().password());
+        newUserUI.put("name",new Faker().name().firstName());
+        newUserUI.put("lastName",new Faker().name().lastName());
+        newUserUI.put("emailAddress",new Faker().internet().emailAddress());
+        newUserUI.put("password",new Faker().internet().password());
 
-        new AddUserPage().firstNameField.sendKeys(newUser.get("name"));
-        new AddUserPage().lastNameTextField.sendKeys(newUser.get("lastName"));
-        new AddUserPage().emailTextField.sendKeys(newUser.get("emailAddress"));
-        new AddUserPage().passwordTextField.sendKeys(newUser.get("password"));
+        new AddUserPage().firstNameField.sendKeys(newUserUI.get("name"));
+        new AddUserPage().lastNameTextField.sendKeys(newUserUI.get("lastName"));
+        new AddUserPage().emailTextField.sendKeys(newUserUI.get("emailAddress"));
+        new AddUserPage().passwordTextField.sendKeys(newUserUI.get("password"));
         new AddUserPage().submitButton.click();
 
-        firstName =newUser.get("name");
-        lastName = newUser.get("lastName");
-        emailAddress = newUser.get("emailAddress");
-        password =newUser.get("password");
+
     }
 
 }

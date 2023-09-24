@@ -1,4 +1,4 @@
-
+@regression
 Feature: As a user i create a user
 
 @ui
